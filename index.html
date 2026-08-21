@@ -88,3 +88,257 @@
 
   .tag{
     font-family: var(--mono);
+    font-size: 13px;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--amber);
+    background: rgba(227,168,87,0.06);
+  }
+
+  .transition{
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-top: 16px;
+  }
+  .transition .from{ color: var(--text-dim); }
+  .transition .arrow{ color: var(--amber); margin: 0 8px; }
+  .transition .to{ color: var(--teal); font-weight: 600; }
+
+  .section-label{
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
+    margin: 0 0 14px;
+  }
+  .section-label::before{
+    content: "// ";
+    color: var(--amber);
+  }
+
+  .panel{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+  }
+
+  .panel-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px;
+    background: var(--panel-header);
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .panel-bar .dots{ display:flex; gap: 6px; }
+  .panel-bar .dots span{
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border);
+  }
+  .panel-bar .filename{ letter-spacing: 0.03em; }
+
+  .panel-body{
+    padding: 20px 22px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .panel-body p{ margin: 0 0 14px; font-size: 15px; }
+  .panel-body p:last-child{ margin-bottom: 0; }
+  .panel-body h3{
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--amber);
+    margin: 20px 0 8px;
+  }
+  .panel-body h3:first-child{ margin-top: 0; }
+  .panel-body ul{ margin: 0 0 14px; padding-left: 18px; }
+  .panel-body li{ margin-bottom: 6px; font-size: 15px; }
+
+  .panel-body::-webkit-scrollbar{ width: 9px; }
+  .panel-body::-webkit-scrollbar-track{ background: transparent; }
+  .panel-body::-webkit-scrollbar-thumb{ background: var(--border); border-radius: 5px; }
+  .panel-body::-webkit-scrollbar-thumb:hover{ background: var(--amber); }
+  .panel-body{ scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+
+  .grid-two{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+  .grid-two:last-child{ margin-bottom: 0; }
+  @media (max-width: 760px){
+    .grid-two{ grid-template-columns: 1fr; }
+  }
+
+  .projects-panel .panel-body{ padding: 0; }
+  .proj-list{
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+  }
+  .proj-list li{
+    border-bottom: 1px solid var(--border);
+  }
+  .proj-list li:last-child{ border-bottom: none; }
+  .proj-list a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    font-family: var(--mono);
+    font-size: 14.5px;
+    color: var(--text);
+  }
+  .proj-list a:hover{
+    background: rgba(79,184,168,0.06);
+    text-decoration: none;
+    color: var(--teal);
+  }
+  .proj-list a::before{
+    content: "→";
+    color: var(--amber);
+    flex-shrink: 0;
+  }
+
+  section{ margin-bottom: 48px; }
+
+  footer{
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="prompt"><span class="path">zay@security</span>:~$ whoami<span class="cursor"></span></p>
+    <h1>Zay Zay</h1>
+    <div class="role-line">
+      <span class="tag">Cyber Security</span>
+    </div>
+    <p class="transition">
+      <span class="from">System Administration</span><span class="arrow">→</span><span class="to">Cyber Security Engineering</span>
+    </p>
+  </header>
+
+  <section>
+    <p class="section-label">Projects</p>
+    <div class="grid-two">
+
+      <div class="panel projects-panel">
+        <div class="panel-bar">
+          <span class="filename">~/projects $ ls</span>
+          <div class="dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="panel-body">
+          <ul class="proj-list">
+            <li><a href="https://zayzay681.github.io/portfolio/link-to-your-github-repo-1" target="_blank" rel="noopener">Windows Server Recovery Lab</a></li>
+            <li><a href="https://zayzay681.github.io/portfolio/link-to-your-github-repo-2" target="_blank" rel="noopener">Legacy VBS Audit</a></li>
+            <li><a href="https://zayzay681.github.io/portfolio/link-to-your-github-repo-3" target="_blank" rel="noopener">Security Audit Simulation</a></li>
+            <!-- Add more by copying a line above -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-bar">
+          <span class="filename">notes.md</span>
+          <div class="dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="panel-body">
+          <h3>About this page</h3>
+          <p>Replace this paragraph with an explanation of who you are, what you're working toward, or an overview of your project focus areas.</p>
+
+          <h3>Project approach</h3>
+          <p>Use this box to describe your general approach to projects — home-lab work, scripting, or the kind of security problems you like solving. Add as many paragraphs as you want; the box scrolls instead of stretching the page.</p>
+
+          <h3>Currently exploring</h3>
+          <p>Mention what you're currently learning or building — bug bounty basics, AD administration, dashboarding, or anything else worth highlighting.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Background &amp; Progress</p>
+    <div class="grid-two">
+
+      <div class="panel">
+        <div class="panel-bar">
+          <span class="filename">cv.log</span>
+          <div class="dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="panel-body">
+          <h3>Summary</h3>
+          <p>Replace this paragraph with your CV summary — background in facilities management, transitioning into IT and cyber security.</p>
+
+          <h3>Education</h3>
+          <ul>
+            <li>NZ Level 5 IT Certificate — in progress</li>
+            <li>NZ Level 7 IT Certificate (AI pathway) — in progress</li>
+          </ul>
+
+          <h3>Certifications</h3>
+          <ul>
+            <li>CompTIA Network+</li>
+            <li>ISC2 CC — in progress</li>
+            <li>CompTIA Security+ — in progress</li>
+            <li>CompTIA CySA+ — in progress</li>
+          </ul>
+
+          <h3>Skills</h3>
+          <p>Add your technical skills here: networking, Active Directory, PowerShell, Nmap, Burp Suite, Power BI, SQL, etc.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-bar">
+          <span class="filename">progress.log</span>
+          <div class="dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="panel-body">
+          <h3>Current project</h3>
+          <p>Replace this with what you're actively working on right now — e.g. a specific lab build, assignment, or tool you're developing.</p>
+
+          <h3>Status</h3>
+          <ul>
+            <li>What's done so far</li>
+            <li>What's in progress</li>
+            <li>What's blocking you / next to fix</li>
+          </ul>
+
+          <h3>Up next</h3>
+          <p>Add the next step or milestone for this project, so the box stays current as you go.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>zay@security:~$ echo "built for GitHub Pages"</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
+
